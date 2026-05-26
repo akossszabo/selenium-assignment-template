@@ -19,9 +19,10 @@ student:
 # This has no effect on your grade.
 # ----------------------------------------------------------
 ai_usage:
-  used: false
-  tools: ""           # e.g. "Claude, GitHub Copilot"
-  description: ""     # e.g. "Used Claude to generate initial Page Object 
+  used: true
+  tools: "Github copilot"           # e.g. "Claude, GitHub Copilot"
+  description: "Used Copilot to generate initial Page Object and classes, then modified them manually to find the correct xpaths"
+                        # e.g. "Used Claude to generate initial Page Object
                        #  classes, then modified them manually. Used Copilot 
                        #  for autocomplete while writing test methods."
                        
@@ -33,15 +34,15 @@ ai_usage:
 # ----------------------------------------------------------
 quality:
   gitignore:                 # required for grade 2+
-    done: false
+    done: yes
     description: "Unnecessary files are ignored (.gitignore covers build output, IDE files, etc.)"
 
   structured_code:           # required for grade 3+
-    done: false
+    done: yes
     description: "Code is organized into classes and functions, not one big file"
 
   readable_code:             # required for grade 4+
-    done: false
+    done: yes
     description: "Function and method names describe what they do, test suite reads like a test description"
 
   low_redundancy:            # required for grade 5
@@ -53,7 +54,7 @@ quality:
 # ----------------------------------------------------------
 basic:
   login_form:                # 3 pts | once
-    done: false
+    done: yes
     description: "Fill a simple form and submit it (e.g. login with username and password)"
 
   form_with_user:            # 3 pts | once
@@ -110,7 +111,7 @@ basic:
     description: "Project has at least 8 Java classes (cumulative with above)"
 
   explicit_wait:             # 3 pts | once
-    done: false
+    done: true
     description: "Use explicit wait (WebDriverWait with ExpectedConditions)"
     link: "https://www.selenium.dev/documentation/webdriver/waits/"
 
@@ -119,7 +120,7 @@ basic:
     description: "Read and verify the page title using getTitle()"
 
   page_object_pattern:       # 3 pts | once
-    done: false
+    done: true
     description: "Use Page Object pattern with at least 2 page classes"
     link: "https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/"
 
