@@ -32,9 +32,19 @@ public class IponLoginTest {
         String title = driver.getTitle();
         assertTrue(title.toLowerCase().contains("ipon"), "Az oldal címe nem tartalmazza az ipon szót!");
 
+        org.openqa.selenium.WebElement searchInput =
+                driver.findElement(org.openqa.selenium.By.xpath("//input[contains(@placeholder, 'Keres') or contains(@class, 'search')]"));
+        assertTrue(searchInput.isDisplayed(), "A keresőmező nem látható a főoldalon!");
+
         homePage.acceptCookiesIfPresent();
+        //assertTrue(driver.getPageSource().contains("i n"), "Nem található a szöveg az oldalon!");
         homePage.clickLogin();
         loginPage.loginAs("teszt.elek@valami.hu", "TitkosJelszo123");
+
+        driver.navigate().back(); // back to homepage
+        driver.navigate().forward();
+
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
     }
 
     @AfterEach
