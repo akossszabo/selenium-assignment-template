@@ -1,1 +1,0 @@
-This directory contains the main application code for the Selenium tests.
